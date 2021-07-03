@@ -1,0 +1,23 @@
+{
+  "Id": "LithiumIronBatteries",
+  "DisplayName": "Lithium Iron Batteries",
+  "Author": "Foxintale",
+  "Version": "1.0.0.0",
+  "Dependencies": [
+    "SMLHelper",
+    "CustomBatteries"
+  ],
+  "VersionDependencies": {
+    "SMLHelper": "2.9",
+    "CustomBatteries": "1.1"
+  },
+  "Game": "Subnautica",
+  "NexusId": {
+    "Subnautica": "573"
+  },
+  "AssemblyName": "NuclearBatteries.dll",
+  "VersionChecker": {
+    "LatestVersionURL": "https://github.com/Metious/MetiousSubnauticaMods/raw/master/NuclearBatteries/mod.json"
+  },
+  "Enable": true
+}
