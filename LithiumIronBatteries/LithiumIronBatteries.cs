@@ -1,24 +1,34 @@
 using System.Reflection;
 using HarmonyLib;
 using QModManager.API.ModLoading;
-using QModManager.API;
 using QModManager.Utility;
-using System.Collections.Generic;
 
 namespace LithiumIronBatteries{
     [QModCore]
 
     public static class LithiumIronBatteries{
         internal static TechType LithiumIronCathode{ get; private set;}
+        internal static TechType LithiumIronAnode{ get; private set;}
+        internal static TechType LithiumIronElectrolyte{ get; private set;}
 
+        [QModPatch]
+  public static void LithiumIronBatteries_InitializationMethod(){
+       var Cathode = new LithiumIronCathodeItem();
+       Cathode.Patch();
+       LithiumIronCathode = Cathode.TechType;
+       
+       var Anode = new LithiumIronAnodeItem(); 
+       Anode.Patch();
+       LithiumIronAnode = Anode.TechType;
+
+       var Electrolyte = new LithiumIronElectrolyteItem();
+       Electrolyte.Patch();
+       LithiumIronElectrolyte = Electrolyte.TechType;
+       
+       Logger.Log(Logger.Level.Debug, "MetalHands Initialization");
+       Harmony harmony = new Harmony("MetalHands");
+       harmony.PatchAll(Assembly.GetExecutingAssembly()); 
+       Logger.Log(Logger.Level.Info, "MetalHands Patched");
+  }
     }
-
-    [QModPatch]
-    public static void LithiumIronBetteries_InitializationMethod(){
-        var Cathode = new LithiumIronCathodePrefab();
-        Cathode.Patch();
-        LithiumIronCathode = Cathode.TechType;
-
-    }
-    
 }

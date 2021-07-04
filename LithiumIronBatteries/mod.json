@@ -1,6 +1,6 @@
 {
   "Id": "LithiumIronBatteries",
-  "DisplayName": "Lithium Iron Batteries",
+  "DisplayName": "Lithium Iron Phosphate Batteries",
   "Author": "Foxintale",
   "Version": "1.0.0.0",
   "Dependencies": [
@@ -13,11 +13,11 @@
   },
   "Game": "Subnautica",
   "NexusId": {
-    "Subnautica": "573"
+    "Subnautica": "000"
   },
-  "AssemblyName": "NuclearBatteries.dll",
+  "AssemblyName": "LithiumIronBatteries.dll",
   "VersionChecker": {
-    "LatestVersionURL": "https://github.com/Metious/MetiousSubnauticaMods/raw/master/NuclearBatteries/mod.json"
+    "LatestVersionURL": "https://github.com/FoxinTale/Subnautica-Mods/raw/main/LithiumIronBatteries/mod.json"
   },
   "Enable": true
 }
