@@ -25,10 +25,10 @@ namespace LithiumIronBatteries{
        Electrolyte.Patch();
        LithiumIronElectrolyte = Electrolyte.TechType;
        
-       Logger.Log(Logger.Level.Debug, "MetalHands Initialization");
-       Harmony harmony = new Harmony("MetalHands");
+       Logger.Log(Logger.Level.Debug, "Lithium Iron Batteries Initialization");
+       Harmony harmony = new Harmony("LithiumIronBatteries");
        harmony.PatchAll(Assembly.GetExecutingAssembly()); 
-       Logger.Log(Logger.Level.Info, "MetalHands Patched");
+       Logger.Log(Logger.Level.Info, "Lithium Iron Batteries Patched");
   }
     }
 }

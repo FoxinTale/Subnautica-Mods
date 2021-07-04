@@ -31,7 +31,7 @@ namespace LithiumIronBatteries
                 EnergyCapacity = 2500,
                 ID = "LithiumIronBattery",
                 Name = "LiFePO Battery",
-                FlavorText = "Lithium Iron Phosphate batteries. Similar to Lithium-Ion batteries, but safer and more stable in extreme conditions.",
+                FlavorText = "Lithium Iron Phosphate batteries. Less powerful than Lithium-Ion batteries, but safer and more stable in extreme conditions.",
                 CraftingMaterials = { LithiumIronBatteries.LithiumIronCathode, LithiumIronBatteries.LithiumIronAnode, LithiumIronBatteries.LithiumIronElectrolyte, TechType.Silicone, TechType.Titanium},
                 UnlocksWith = TechType.BloodOil
             };
@@ -42,7 +42,7 @@ namespace LithiumIronBatteries
                 EnergyCapacity = lifepoBattery.EnergyCapacity * 2,
                 ID = "LithiumIronPowercell",
                 Name = "LiFePO Power Cell",
-                FlavorText = "A Lithium Iron Phosphate Power Cell. Similar to Lithium-Ion, but safer and more stable in extreme conditions.",
+                FlavorText = "A Lithium Iron Phosphate Power Cell. Less powerful than Lithium-Ion cells, but safer and more stable in extreme conditions.",
                 CraftingMaterials = { lifepoBattery.TechType, lifepoBattery.TechType, TechType.Silicone },
                 UnlocksWith = lifepoBattery.TechType
 
