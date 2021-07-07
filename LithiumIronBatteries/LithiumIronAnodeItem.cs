@@ -1,4 +1,6 @@
-﻿using SMLHelper.V2.Assets;
+﻿using System.IO;
+using System.Reflection;
+using SMLHelper.V2.Assets;
 using SMLHelper.V2.Crafting;
 
 namespace LithiumIronBatteries
@@ -10,7 +12,7 @@ namespace LithiumIronBatteries
     
         public LithiumIronAnodeItem() : base(
             "LithiumIronAnode", 
-            "LiFePo4 anode", 
+            "LiFePO4 Anode", 
             "The Anode (negative end) of a Lithium Iron Phosphate battery.")
         {}
 
@@ -19,6 +21,10 @@ namespace LithiumIronBatteries
         public override TechGroup GroupForPDA => TechGroup.Resources;
         public override TechType RequiredForUnlock => TechType.BloodOil;
         public override float CraftingTime => 5f;
+        public override CraftTree.Type FabricatorType => CraftTree.Type.Fabricator;
+        public override string[] StepsToFabricatorTab => new string[] { "Resources", "Electronics" };
+        public override string AssetsFolder =>  Path.Combine(new DirectoryInfo(Path.Combine(Assembly.GetExecutingAssembly().Location, "..")).Name, "Assets");
+        public override string IconFileName => "Anode.png";
 
         protected override TechData GetBlueprintRecipe()
         {
@@ -27,8 +33,8 @@ namespace LithiumIronBatteries
                 craftAmount = 1,
                 Ingredients =
                 {
-                    new Ingredient(TechType.Magnetite,2),
-                    new Ingredient(TechType.EyesPlantSeed,2)
+                    new Ingredient(TechType.Lithium,1),
+                    new Ingredient(TechType.Diamond,1)
                 },
             };
         }

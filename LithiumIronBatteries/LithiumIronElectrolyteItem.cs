@@ -1,4 +1,6 @@
-﻿using SMLHelper.V2.Assets;
+﻿using System.IO;
+using System.Reflection;
+using SMLHelper.V2.Assets;
 using SMLHelper.V2.Crafting;
 
 namespace LithiumIronBatteries
@@ -10,7 +12,7 @@ namespace LithiumIronBatteries
     
         public LithiumIronElectrolyteItem() : base(
             "LithiumIronElectrolyte", 
-            "LiFePo4 Electrolyte", 
+            "LiFePO4 Electrolyte", 
             "The electrolyte of a Lithium Iron Phosphate battery. This is the stuff that makes it chooch.")
         {}
 
@@ -19,7 +21,10 @@ namespace LithiumIronBatteries
         public override TechGroup GroupForPDA => TechGroup.Resources;
         public override TechType RequiredForUnlock => TechType.BloodOil;
         public override float CraftingTime => 5f;
-
+        public override CraftTree.Type FabricatorType => CraftTree.Type.Fabricator;
+        public override string[] StepsToFabricatorTab => new string[] { "Resources", "Electronics" };
+        public override string AssetsFolder =>  Path.Combine(new DirectoryInfo(Path.Combine(Assembly.GetExecutingAssembly().Location, "..")).Name, "Assets");
+        public override string IconFileName => "Electrolyte.png";
         protected override TechData GetBlueprintRecipe()
         {
             return new TechData()
@@ -27,9 +32,9 @@ namespace LithiumIronBatteries
                 craftAmount = 1,
                 Ingredients =
                 {
-                    new Ingredient(TechType.HydrochloricAcid,2),
+                    new Ingredient(TechType.HydrochloricAcid,1),
                     new Ingredient(TechType.Benzene,1),
-                    new Ingredient(TechType.Lithium, 2)
+                    new Ingredient(TechType.Lithium, 1)
                 }
             };
         }

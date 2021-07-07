@@ -12,28 +12,38 @@ namespace LithiumIronBatteries
         static Assembly myAssembly = Assembly.GetExecutingAssembly();
         static string ModPath = Path.GetDirectoryName(myAssembly.Location);
         static string AssetsFolder = Path.Combine(ModPath, "Assets");
-        static AssetBundle assetBundle = AssetBundle.LoadFromFile(Path.Combine(AssetsFolder, "lithiumironbatteries"));
+        static AssetBundle assetBundle = AssetBundle.LoadFromFile(Path.Combine(AssetsFolder, "LithiumIronBatteries"));
         
         public const string version = "1.0.0.0";
         public const string modName = "[LithiumIronBatteries] ";
-
+        internal static TechType LithiumIronCathode{ get; private set;}
+        internal static TechType LithiumIronAnode{ get; private set;}
+        internal static TechType LithiumIronElectrolyte{ get; private set;} 
         [QModPatch]
         public static void Load()
         {
+            LithiumIronBatteries_Init();
             CreateAndPatchPacks();
-            LithiumIronBatteries.LithiumIronBatteries_InitializationMethod();
+            
         }
         #region Create And Patch Packs
         private static void CreateAndPatchPacks()
         { 
             var lifepoBattery = new CbBattery
             {
-                EnergyCapacity = 2500,
+                EnergyCapacity = 1250,
                 ID = "LithiumIronBattery",
                 Name = "LiFePO Battery",
                 FlavorText = "Lithium Iron Phosphate batteries. Less powerful than Lithium-Ion batteries, but safer and more stable in extreme conditions.",
-                CraftingMaterials = { LithiumIronBatteries.LithiumIronCathode, LithiumIronBatteries.LithiumIronAnode, LithiumIronBatteries.LithiumIronElectrolyte, TechType.Silicone, TechType.Titanium},
-                UnlocksWith = TechType.BloodOil
+                CraftingMaterials = { LithiumIronCathode, LithiumIronAnode, LithiumIronElectrolyte,TechType.Copper, TechType.Silicone, TechType.Titanium},
+                UnlocksWith = TechType.BloodOil,
+                CustomIcon = new Atlas.Sprite(assetBundle.LoadAsset<Sprite>("lithiumironbatteryicon")),
+                CBModelData = new CBModelData
+                {
+                    CustomTexture = assetBundle.LoadAsset<Texture2D>("lithiumironbattery"),
+                    CustomNormalMap = assetBundle.LoadAsset<Texture2D>("lithiumironbattery_msn"),
+                    CustomSpecMap = assetBundle.LoadAsset<Texture2D>("lithiumironbattery_s")
+                }
             };
             lifepoBattery.Patch();
 
@@ -48,6 +58,21 @@ namespace LithiumIronBatteries
 
             };
             lifepoPowercell.Patch();
+        }
+
+        private static void LithiumIronBatteries_Init()
+        {
+            var Cathode = new LithiumIronCathodeItem();
+            Cathode.Patch();
+            LithiumIronCathode = Cathode.TechType;
+       
+            var Anode = new LithiumIronAnodeItem(); 
+            Anode.Patch();
+            LithiumIronAnode = Anode.TechType;
+
+            var Electrolyte = new LithiumIronElectrolyteItem();
+            Electrolyte.Patch();
+            LithiumIronElectrolyte = Electrolyte.TechType;
         }
         #endregion
     }

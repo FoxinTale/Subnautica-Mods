@@ -64,11 +64,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LithiumIronAnodeItem.cs" />
-    <Compile Include="LithiumIronBatteries.cs" />
     <Compile Include="LithiumIronCathodeItem.cs" />
     <Compile Include="LithiumIronElectrolyteItem.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+   <ItemGroup>
+    <Content Include="Assets\lithiumironbattery.png" />
+    <Content Include="Assets\lithiumironbattery_msn.png"/>
+    <Content Include="Assets\lithiumironbattery_s.png"/>
+	<Content Include="Assets\lithiumironbatteryicon.png" />
+    <Content Include="Assets\Anode.png" />
+    <Content Include="Assets\Cathode.png" />
+    <Content Include="Assets\Electrolyte.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="mod.json" />
