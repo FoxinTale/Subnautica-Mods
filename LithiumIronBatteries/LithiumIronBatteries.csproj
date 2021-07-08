@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModConfig.cs" />
     <Compile Include="LithiumIronAnodeItem.cs" />
     <Compile Include="LithiumIronCathodeItem.cs" />
     <Compile Include="LithiumIronElectrolyteItem.cs" />
@@ -71,8 +72,8 @@
   </ItemGroup>
    <ItemGroup>
     <Content Include="Assets\lithiumironbattery.png" />
-    <Content Include="Assets\lithiumironbattery_msn.png"/>
-    <Content Include="Assets\lithiumironbattery_s.png"/>
+    <Content Include="Assets\lithiumironbattery_msn.png" />
+    <Content Include="Assets\lithiumironbattery_s.png" />
 	<Content Include="Assets\lithiumironbatteryicon.png" />
     <Content Include="Assets\Anode.png" />
     <Content Include="Assets\Cathode.png" />

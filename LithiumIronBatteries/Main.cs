@@ -1,21 +1,21 @@
 using QModManager.API.ModLoading;
+using SMLHelper.V2.Utility;
 using System.Reflection;
 using System.IO;
 using CustomBatteries.API;
-using UnityEngine;
 
 namespace LithiumIronBatteries
 {
     [QModCore]
     public static class Main
     {
-        static Assembly myAssembly = Assembly.GetExecutingAssembly();
-        static string ModPath = Path.GetDirectoryName(myAssembly.Location);
-        static string AssetsFolder = Path.Combine(ModPath, "Assets");
-        static AssetBundle assetBundle = AssetBundle.LoadFromFile(Path.Combine(AssetsFolder, "LithiumIronBatteries"));
         
-        public const string version = "1.0.0.0";
-        public const string modName = "[LithiumIronBatteries] ";
+        static string AssetsFolder = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Assets");
+        
+        public const string Version = "1.0.0.0";
+        public const string ModName = "[LithiumIronBatteries] ";
+
+        public static ModConfig Config { get;} = new ModConfig();
         internal static TechType LithiumIronCathode{ get; private set;}
         internal static TechType LithiumIronAnode{ get; private set;}
         internal static TechType LithiumIronElectrolyte{ get; private set;} 
@@ -37,12 +37,12 @@ namespace LithiumIronBatteries
                 FlavorText = "Lithium Iron Phosphate batteries. Less powerful than Lithium-Ion batteries, but safer and more stable in extreme conditions.",
                 CraftingMaterials = { LithiumIronCathode, LithiumIronAnode, LithiumIronElectrolyte,TechType.Copper, TechType.Silicone, TechType.Titanium},
                 UnlocksWith = TechType.BloodOil,
-                CustomIcon = new Atlas.Sprite(assetBundle.LoadAsset<Sprite>("lithiumironbatteryicon")),
+                CustomIcon = ImageUtils.LoadSpriteFromFile(Path.Combine(AssetsFolder, "lithiumironbatteryicon.png")),
                 CBModelData = new CBModelData
                 {
-                    CustomTexture = assetBundle.LoadAsset<Texture2D>("lithiumironbattery"),
-                    CustomNormalMap = assetBundle.LoadAsset<Texture2D>("lithiumironbattery_msn"),
-                    CustomSpecMap = assetBundle.LoadAsset<Texture2D>("lithiumironbattery_s")
+                    CustomTexture = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lithiumironbattery.png")),
+                    CustomNormalMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lithiumironbattery_msn.png")),
+                    CustomSpecMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lithiumironbattery_s.png"))
                 }
             };
             lifepoBattery.Patch();
