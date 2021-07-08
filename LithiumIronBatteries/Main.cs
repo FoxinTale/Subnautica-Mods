@@ -38,12 +38,12 @@ namespace LithiumIronBatteries
                 FlavorText = "Lithium Iron Phosphate batteries. Less powerful than Lithium-Ion batteries, but safer and more stable in extreme conditions.",
                 CraftingMaterials = { LithiumIronCathode, LithiumIronAnode, LithiumIronElectrolyte,TechType.Copper, TechType.Silicone, TechType.Titanium},
                 UnlocksWith = TechType.BloodOil,
-                CustomIcon = ImageUtils.LoadSpriteFromFile(Path.Combine(AssetsFolder, "lithiumironbatteryicon.png")),
+                CustomIcon = ImageUtils.LoadSpriteFromFile(Path.Combine(AssetsFolder, "lifepo_battery_icon.png")),
                 CBModelData = new CBModelData
                 {
-                    CustomTexture = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lithiumironbattery.png")),
-                    CustomNormalMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lithiumironbattery_msn.png")),
-                    CustomSpecMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lithiumironbattery_s.png"))
+                    CustomTexture = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_battery.png")),
+                    CustomNormalMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_battery_msn.png")),
+                    CustomSpecMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_battery_s.png"))
                 }
             };
             lifepoBattery.Patch();
@@ -54,8 +54,15 @@ namespace LithiumIronBatteries
                 ID = "LithiumIronPowercell",
                 Name = "LiFePO Power Cell",
                 FlavorText = "A Lithium Iron Phosphate Power Cell. Less powerful than Lithium-Ion cells, but safer and more stable in extreme conditions.",
-                CraftingMaterials = { lifepoBattery.TechType, lifepoBattery.TechType, TechType.Silicone },
-                UnlocksWith = lifepoBattery.TechType
+                CraftingMaterials = { lifepoBattery.TechType, lifepoBattery.TechType, TechType.Silicone, TechType.Copper },
+                UnlocksWith = lifepoBattery.TechType,
+                CustomIcon = ImageUtils.LoadSpriteFromFile(Path.Combine(AssetsFolder, "lifepo_powercell_icon.png")),
+                CBModelData = new CBModelData
+                {
+                    CustomTexture = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_powercell.png")),
+                    CustomNormalMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_powercell_msn.png")),
+                    CustomSpecMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_powercell_s.png"))
+                }
 
             };
             lifepoPowercell.Patch();

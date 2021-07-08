@@ -21,7 +21,7 @@ namespace LithiumIronBatteries{
     public override CraftTree.Type FabricatorType => CraftTree.Type.Fabricator;
     public override string[] StepsToFabricatorTab => new string[] { "Resources", "Electronics" };
     public override string AssetsFolder =>  Path.Combine(new DirectoryInfo(Path.Combine(Assembly.GetExecutingAssembly().Location, "..")).Name, "Assets");
-    public override string IconFileName => "Cathode.png";
+    public override string IconFileName => "lifepo_cathode_icon.png";
 
     protected override TechData GetBlueprintRecipe()
         {
