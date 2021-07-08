@@ -10,10 +10,11 @@ namespace LithiumIronBatteries
         public BatteryMode Mode { get; set; } = BatteryMode.Balanced;
         public enum BatteryMode
         {
-            Realistic,  // Sub ion battery, 750 or less
-            Balanced, // Just above ion battery, roughly 1250.
-            Unrealistic, // Double ion battery, 2000
-            Absurd // 2500, on par with nuclear batteries. The value makes sense for them, but not LiFePo4 batteries.
+            Realistic = 750 ,  // Sub ion battery.
+            Balanced = 1250, // Just above ion battery.
+            Unrealistic = 2000, // Double ion battery.
+            Absurd = 2500, // On par with nuclear batteries. The value makes sense for them, but not LiFePo4 batteries.
+            Wtf = 5000
         }
     }
 }

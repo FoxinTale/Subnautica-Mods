@@ -6,10 +6,8 @@ using SMLHelper.V2.Crafting;
 namespace LithiumIronBatteries{
     internal class LithiumIronCathodeItem : Craftable
   {
-    public static TechType TechTypeID { get; private set; }
-    
-    
- public LithiumIronCathodeItem() : base(
+
+      public LithiumIronCathodeItem() : base(
           "LithiumIronCathode", 
           "LiFePO4 Cathode", 
           "The Cathode (positive end) of a Lithium Iron Phosphate battery.")

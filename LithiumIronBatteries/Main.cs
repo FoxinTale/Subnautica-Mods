@@ -3,6 +3,7 @@ using SMLHelper.V2.Utility;
 using System.Reflection;
 using System.IO;
 using CustomBatteries.API;
+using SMLHelper.V2.Handlers;
 
 namespace LithiumIronBatteries
 {
@@ -15,23 +16,23 @@ namespace LithiumIronBatteries
         public const string Version = "1.0.0.0";
         public const string ModName = "[LithiumIronBatteries] ";
 
-        public static ModConfig Config { get;} = new ModConfig();
-        internal static TechType LithiumIronCathode{ get; private set;}
-        internal static TechType LithiumIronAnode{ get; private set;}
-        internal static TechType LithiumIronElectrolyte{ get; private set;} 
+        private static ModConfig Config { get; set; }
+        private static TechType LithiumIronCathode { get; set;}
+        private static TechType LithiumIronAnode{ get; set;}
+        private static TechType LithiumIronElectrolyte{ get; set;} 
         [QModPatch]
         public static void Load()
         {
             LithiumIronBatteries_Init();
+            Config = OptionsPanelHandler.Main.RegisterModOptions<ModConfig>();
             CreateAndPatchPacks();
-            
         }
         #region Create And Patch Packs
         private static void CreateAndPatchPacks()
         { 
             var lifepoBattery = new CbBattery
-            {
-                EnergyCapacity = 1250,
+            {  
+                EnergyCapacity = (int)Config.Mode,
                 ID = "LithiumIronBattery",
                 Name = "LiFePO Battery",
                 FlavorText = "Lithium Iron Phosphate batteries. Less powerful than Lithium-Ion batteries, but safer and more stable in extreme conditions.",
@@ -62,17 +63,17 @@ namespace LithiumIronBatteries
 
         private static void LithiumIronBatteries_Init()
         {
-            var Cathode = new LithiumIronCathodeItem();
-            Cathode.Patch();
-            LithiumIronCathode = Cathode.TechType;
+            var cathode = new LithiumIronCathodeItem();
+            cathode.Patch();
+            LithiumIronCathode = cathode.TechType;
        
-            var Anode = new LithiumIronAnodeItem(); 
-            Anode.Patch();
-            LithiumIronAnode = Anode.TechType;
+            var anode = new LithiumIronAnodeItem(); 
+            anode.Patch();
+            LithiumIronAnode = anode.TechType;
 
-            var Electrolyte = new LithiumIronElectrolyteItem();
-            Electrolyte.Patch();
-            LithiumIronElectrolyte = Electrolyte.TechType;
+            var electrolyte = new LithiumIronElectrolyteItem();
+            electrolyte.Patch();
+            LithiumIronElectrolyte = electrolyte.TechType;
         }
         #endregion
     }

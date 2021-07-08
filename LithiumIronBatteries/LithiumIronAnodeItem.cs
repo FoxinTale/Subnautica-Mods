@@ -7,9 +7,6 @@ namespace LithiumIronBatteries
 {
     internal class LithiumIronAnodeItem : Craftable
     {
-        public static TechType TechTypeID { get; private set; }
-    
-    
         public LithiumIronAnodeItem() : base(
             "LithiumIronAnode", 
             "LiFePO4 Anode", 
