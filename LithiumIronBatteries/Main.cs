@@ -43,7 +43,8 @@ namespace LithiumIronBatteries
                 {
                     CustomTexture = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_battery.png")),
                     CustomNormalMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_battery_msn.png")),
-                    CustomSpecMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_battery_s.png"))
+                    CustomSpecMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_battery_s.png")),
+                    UseIonModelsAsBase = true
                 }
             };
             lifepoBattery.Patch();
@@ -61,7 +62,10 @@ namespace LithiumIronBatteries
                 {
                     CustomTexture = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_powercell.png")),
                     CustomNormalMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_powercell_msn.png")),
-                    CustomSpecMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_powercell_s.png"))
+                    CustomSpecMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_powercell_s.png")),
+                    CustomIllumMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder, "lifepo_powercell_sk.png")),
+                    // I'm a gal coming from skyrim modding. That's why there's the name suffixes...
+                    UseIonModelsAsBase = true
                 }
 
             };
