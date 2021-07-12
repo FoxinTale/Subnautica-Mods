@@ -2,6 +2,8 @@
 using System.Reflection;
 using SMLHelper.V2.Assets;
 using SMLHelper.V2.Crafting;
+using SMLHelper.V2.Utility;
+using UnityEngine;
 
 namespace LithiumIronBatteries
 {
@@ -20,8 +22,20 @@ namespace LithiumIronBatteries
         public override float CraftingTime => 5f;
         public override CraftTree.Type FabricatorType => CraftTree.Type.Fabricator;
         public override string[] StepsToFabricatorTab => new string[] { "Resources", "Electronics" };
-        public override string AssetsFolder =>  Path.Combine(new DirectoryInfo(Path.Combine(Assembly.GetExecutingAssembly().Location, "..")).Name, "Assets");
+        public override string AssetsFolder => Main.AssetsFolder;
         public override string IconFileName => "lifepo_electrolyte_icon.png";
+        
+        public override GameObject GetGameObject()
+        {
+            var electrolyteObj = Object.Instantiate(CraftData.GetPrefabForTechType(TechType.Aerogel));
+            var electrolyteMaterial = electrolyteObj.GetComponentInChildren<Renderer>().material;
+            electrolyteMaterial.mainTexture = ImageUtils.LoadTextureFromFile(Path.Combine(Main.AssetsFolder, "lifepo_electrolyte.png"));
+            electrolyteMaterial.SetTexture(ShaderPropertyID._BumpMap, ImageUtils.LoadTextureFromFile(Path.Combine(Main.AssetsFolder, "lifepo_electrolyte_msn.png")));
+            electrolyteMaterial.SetTexture(ShaderPropertyID._SpecTex, ImageUtils.LoadTextureFromFile(Path.Combine(Main.AssetsFolder, "lifepo_electrolyte_s.png")));
+
+            ModPrefabCache.AddPrefab(electrolyteObj);
+            return electrolyteObj;
+        }
         protected override TechData GetBlueprintRecipe()
         {
             return new TechData()

@@ -77,7 +77,6 @@ C:\Users\Aubrey\Documents\Modding\Subnautica\LithiumIronBatteries\obj\Debug\Nucl
 C:\Users\Aubrey\Documents\GitHub\Subnautica-Mods\LithiumIronBatteries\bin\Debug\LithiumIronBatteries.dll
 C:\Users\Aubrey\Documents\GitHub\Subnautica-Mods\LithiumIronBatteries\bin\Debug\LithiumIronBatteries.pdb
 C:\Users\Aubrey\Documents\GitHub\Subnautica-Mods\LithiumIronBatteries\bin\Debug\0Harmony.dll
-C:\Users\Aubrey\Documents\GitHub\Subnautica-Mods\LithiumIronBatteries\bin\Debug\Assembly-CSharp_publicized.dll
 C:\Users\Aubrey\Documents\GitHub\Subnautica-Mods\LithiumIronBatteries\bin\Debug\CustomBatteries.dll
 C:\Users\Aubrey\Documents\GitHub\Subnautica-Mods\LithiumIronBatteries\bin\Debug\QModInstaller.dll
 C:\Users\Aubrey\Documents\GitHub\Subnautica-Mods\LithiumIronBatteries\bin\Debug\SMLHelper.dll
@@ -157,3 +156,6 @@ C:\Users\Aubrey\Documents\GitHub\Subnautica-Mods\LithiumIronBatteries\obj\Debug\
 C:\Users\Aubrey\Documents\GitHub\Subnautica-Mods\LithiumIronBatteries\obj\Debug\LithiumIronBatteries.csproj.CopyComplete
 C:\Users\Aubrey\Documents\GitHub\Subnautica-Mods\LithiumIronBatteries\obj\Debug\LithiumIronBatteries.dll
 C:\Users\Aubrey\Documents\GitHub\Subnautica-Mods\LithiumIronBatteries\obj\Debug\LithiumIronBatteries.pdb
+C:\Users\Aubrey\Documents\GitHub\Subnautica-Mods\LithiumIronBatteries\bin\Debug\Assembly-CSharp.dll
+C:\Users\Aubrey\Documents\GitHub\Subnautica-Mods\LithiumIronBatteries\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Aubrey\Documents\GitHub\Subnautica-Mods\LithiumIronBatteries\bin\Debug\iTween.dll

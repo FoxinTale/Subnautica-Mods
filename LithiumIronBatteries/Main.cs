@@ -11,7 +11,7 @@ namespace LithiumIronBatteries
     public static class Main
     {
         
-        static string AssetsFolder = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Assets");
+        public static string AssetsFolder = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Assets");
         
         public const string Version = "1.0.0.0";
         public const string ModName = "[LithiumIronBatteries] ";
@@ -34,7 +34,7 @@ namespace LithiumIronBatteries
             {  
                 EnergyCapacity = (int)Config.Mode,
                 ID = "LithiumIronBattery",
-                Name = "LiFePO Battery",
+                Name = "LiFePO4 Battery",
                 FlavorText = "Lithium Iron Phosphate batteries. Less powerful than Lithium-Ion batteries, but safer and more stable in extreme conditions.",
                 CraftingMaterials = { LithiumIronCathode, LithiumIronAnode, LithiumIronElectrolyte,TechType.Copper, TechType.Silicone, TechType.Titanium},
                 UnlocksWith = TechType.BloodOil,
@@ -44,6 +44,8 @@ namespace LithiumIronBatteries
                     CustomTexture = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_battery.png")),
                     CustomNormalMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_battery_msn.png")),
                     CustomSpecMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_battery_s.png")),
+                    CustomIllumMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder, "lifepo_battery_sk.png")),
+                    // I'm a gal coming from skyrim modding. That's why there's the name suffixes...
                     UseIonModelsAsBase = true
                 }
             };
@@ -53,7 +55,7 @@ namespace LithiumIronBatteries
             {
                 EnergyCapacity = lifepoBattery.EnergyCapacity * 2,
                 ID = "LithiumIronPowercell",
-                Name = "LiFePO Power Cell",
+                Name = "LiFePO4 Power Cell",
                 FlavorText = "A Lithium Iron Phosphate Power Cell. Less powerful than Lithium-Ion cells, but safer and more stable in extreme conditions.",
                 CraftingMaterials = { lifepoBattery.TechType, lifepoBattery.TechType, TechType.Silicone, TechType.Copper },
                 UnlocksWith = lifepoBattery.TechType,
@@ -64,7 +66,6 @@ namespace LithiumIronBatteries
                     CustomNormalMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_powercell_msn.png")),
                     CustomSpecMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_powercell_s.png")),
                     CustomIllumMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder, "lifepo_powercell_sk.png")),
-                    // I'm a gal coming from skyrim modding. That's why there's the name suffixes...
                     UseIonModelsAsBase = true
                 }
 
