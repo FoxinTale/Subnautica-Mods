@@ -29,7 +29,7 @@ namespace LithiumIronBatteries{
         var cathodeObj = Object.Instantiate(CraftData.GetPrefabForTechType(TechType.Silicone));
         var cathodeMaterial = cathodeObj.GetComponentInChildren<Renderer>().material;
         cathodeMaterial.mainTexture = ImageUtils.LoadTextureFromFile(Path.Combine(Main.AssetsFolder, "lifepo_cathode.png"));
-        cathodeMaterial.SetTexture(ShaderPropertyID._BumpMap, ImageUtils.LoadTextureFromFile(Path.Combine(Main.AssetsFolder, "lifepo_cathode_msn.png")));
+        cathodeMaterial.SetTexture(ShaderPropertyID._BumpMap, ImageUtils.LoadTextureFromFile(Path.Combine(Main.AssetsFolder, "lifepo_cathode_n.png")));
         cathodeMaterial.SetTexture(ShaderPropertyID._SpecTex, ImageUtils.LoadTextureFromFile(Path.Combine(Main.AssetsFolder, "lifepo_cathode_s.png")));
 
         ModPrefabCache.AddPrefab(cathodeObj);

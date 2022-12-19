@@ -30,7 +30,7 @@ namespace LithiumIronBatteries
             var electrolyteObj = Object.Instantiate(CraftData.GetPrefabForTechType(TechType.Aerogel));
             var electrolyteMaterial = electrolyteObj.GetComponentInChildren<Renderer>().material;
             electrolyteMaterial.mainTexture = ImageUtils.LoadTextureFromFile(Path.Combine(Main.AssetsFolder, "lifepo_electrolyte.png"));
-            electrolyteMaterial.SetTexture(ShaderPropertyID._BumpMap, ImageUtils.LoadTextureFromFile(Path.Combine(Main.AssetsFolder, "lifepo_electrolyte_msn.png")));
+            electrolyteMaterial.SetTexture(ShaderPropertyID._BumpMap, ImageUtils.LoadTextureFromFile(Path.Combine(Main.AssetsFolder, "lifepo_electrolyte_n.png")));
             electrolyteMaterial.SetTexture(ShaderPropertyID._SpecTex, ImageUtils.LoadTextureFromFile(Path.Combine(Main.AssetsFolder, "lifepo_electrolyte_s.png")));
 
             ModPrefabCache.AddPrefab(electrolyteObj);

@@ -42,10 +42,10 @@ namespace LithiumIronBatteries
                 CBModelData = new CBModelData
                 {
                     CustomTexture = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_battery.png")),
-                    CustomNormalMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_battery_msn.png")),
+                    CustomNormalMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_battery_n.png")),
                     CustomSpecMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_battery_s.png")),
-                    CustomIllumMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder, "lifepo_battery_sk.png")),
-                    // I'm a gal coming from skyrim modding. That's why there's the name suffixes...
+                    CustomIllumMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder, "lifepo_battery_em.png")),
+                    // I'm coming from skyrim modding. That's why there's the name suffixes...
                     UseIonModelsAsBase = true
                 }
             };
@@ -63,9 +63,9 @@ namespace LithiumIronBatteries
                 CBModelData = new CBModelData
                 {
                     CustomTexture = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_powercell.png")),
-                    CustomNormalMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_powercell_msn.png")),
+                    CustomNormalMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_powercell_n.png")),
                     CustomSpecMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder,"lifepo_powercell_s.png")),
-                    CustomIllumMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder, "lifepo_powercell_sk.png")),
+                    CustomIllumMap = ImageUtils.LoadTextureFromFile(Path.Combine(AssetsFolder, "lifepo_powercell_em.png")),
                     UseIonModelsAsBase = true
                 }
 
